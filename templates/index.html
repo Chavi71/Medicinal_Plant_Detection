@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BioBotanica - Medicinal Plant Classifier</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Medicinal Plant Detection</h1>
+            <p>Your go-to solution for medicinal plant identification and benefits.</p>
+        </header>
+        
+        <main>
+            <form action="/" method="POST" enctype="multipart/form-data">
+                <input type="file" name="image" accept="image/*" required>
+                <button type="submit">Classify Plant</button>
+            </form>
+
+            {% if uploaded_image %}
+            <h3>Uploaded Image:</h3>
+            <img src="{{ url_for('static', filename=uploaded_image) }}" alt="Uploaded Plant Image" style="width: 300px; height: auto;">
+            {% endif %}
+
+            {% if result %}
+            <div class="result">
+                <h2>Result: {{ result }}</h2>
+                <p>Confidence: {{ confidence }}</p>
+                {% if info %}
+                    <h3>Medicinal Information</h3>
+                    <p><strong>Description:</strong> {{ info.description }}</p>
+                    <p><strong>Uses:</strong> {{ info.uses }}</p>
+                    <p><strong>Benefits:</strong> {{ info.benefits }}</p>
+                    <p><strong>How to Grow:</strong> {{ info.how_to_grow }}</p>
+                {% else %}
+                    <p>No additional information available.</p>
+                {% endif %}
+            </div>
+            {% endif %}
+        </main>
+    </div>
+</body>
+</html>
