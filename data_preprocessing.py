@@ -4,7 +4,7 @@ from torch.utils.data import DataLoader
 from torchvision.datasets import ImageFolder
 
 # Define the path to your dataset
-data_dir = r'C:\Users\Amulya H G\OneDrive\Desktop\PC1 Desktop data\BioBotanica\data\images'
+data_dir = r'...'
 
 # Define transformations for data preprocessing and augmentation
 transform = transforms.Compose([
