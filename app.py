@@ -12,13 +12,13 @@ app = Flask(__name__)
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 # Path to the model
-MODEL_PATH = r'C:\Users\Amulya H G\OneDrive\Desktop\PC1 Desktop data\BioBotanica\models\resnet50.pth'
+MODEL_PATH = r'....'
 
 # Class names based on the training dataset
 class_names = ["Aloe Vera", "Amla", "Amruta Balli", "Arali", "Hibiscus", "Lemon Grass", "Mint"]
 
 # Configure upload folder for storing the image temporarily
-UPLOAD_FOLDER = r'C:\Users\Amulya H G\Desktop\PC1 Desktop data\BioBotanica\static\uploads'
+UPLOAD_FOLDER = r'....'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 # Create upload folder if it doesn't exist
