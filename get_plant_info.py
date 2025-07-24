@@ -2,7 +2,7 @@ import pandas as pd
 
 def get_plant_info(plant_name):
     # Load the corrected CSV file
-    data = pd.read_csv(r"C:\Users\Amulya H G\OneDrive\Desktop\PC1 Desktop data\BioBotanica\data\plant_info.csv", on_bad_lines='skip')
+    data = pd.read_csv(r"...", on_bad_lines='skip')
 
     # Normalize column names (remove spaces and make lowercase)
     data.columns = data.columns.str.strip().str.lower()
